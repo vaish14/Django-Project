@@ -1,0 +1,7 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    <h2>{{ msg }}</h2>
+     <p><a href="{% url 'myapp:about' %}">About page</a></p>
+
+     <p><a href="{% url 'myapp:courses' %}">All Courses</a></p>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    <a href="{% url 'myapp:courses' %}">Back to all courses</a>
+    <b><a href="{% url 'myapp:add_interest' course.id %}">Add Interest</a> </b>
+    <p><b>Course Details:</b></p>
+    <ul>
+        <li>
+            <b>Name: </b>{{ course.name}}
+        </li>
+        <li>
+            <b>Price: </b>{{ course.price }}
+        </li>
+        <li>
+            <b>No of students Interested: </b>{{ course.interested }}
+        </li>
+        <li>
+            <b>For Everyone: </b>{{ course.for_everyone }}
+        </li>
+
+    </ul>
+{% endblock %}

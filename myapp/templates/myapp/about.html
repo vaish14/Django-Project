@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html' %}
+{% block title %}
+    About
+{% endblock %}
+{% block body_block %}
+    <h1>This is an E-learning Website! Search our Topics to find all available Courses.</h1>
+{#    <p><a href="{% url 'myapp:index' %}">Go Back</a></p>#}
+    <p>
+        {% if request.session.last_login %}
+            Last Logged In at : {{ request.session.last_login }}
+            <p><a href="{% url 'myapp:user_logout' %}">Logout</a></p>
+        {% else %}
+            Your last login was more than one hour ago
+            <p><a href="{% url 'myapp:user_login' %}">Login</a></p>
+        {% endif %}
+    </p>
+    <p><a href="{% url 'myapp:about' %}">About page</a></p>
+
+    <p><a href="{% url 'myapp:courses' %}">All Courses</a></p>
+{% endblock %}
